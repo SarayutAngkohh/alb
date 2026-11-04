@@ -1,0 +1,6 @@
+{
+  "name": "Along The Books DEMO : By Sarayut Angkoh",
+  "description": "แอปแจ้งเตือนตำแหน่งเมื่อใกล้ถึงสถานีเป้าหมาย ช่วยให้อ่านหนังสือได้อย่างสบายใจโดยไม่เลยป้าย พร้อมระบบสั่นเตือนและคู่มือแนะนำการใช้งาน",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
