@@ -3,7 +3,7 @@ name: Build Android APK
 on:
   push:
     branches: [ "main", "master" ]
-  workflow_dispatch: # ปุ่มกดสั่ง Build ด้วยตัวเองบนเว็บ GitHub
+  workflow_dispatch:
 
 jobs:
   build:
@@ -20,16 +20,11 @@ jobs:
         distribution: 'temurin'
         cache: gradle
 
-    - name: Generate Gradle Wrapper if Missing
+    - name: Force Gradle Wrapper to Version 9.3.1
       run: |
-        if [ ! -f "gradlew" ]; then
-          echo "gradlew not found, generating one automatically..."
-          sudo apt-get update && sudo apt-get install -y gradle
-          gradle wrapper --gradle-version 8.5
-          chmod +x gradlew
-        else
-          chmod +x gradlew
-        fi
+        sudo apt-get update && sudo apt-get install -y gradle
+        gradle wrapper --gradle-version 9.3.1
+        chmod +x gradlew
 
     - name: Build Debug APK
       run: ./gradlew assembleDebug
